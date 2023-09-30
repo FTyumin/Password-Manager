@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, ListView
 from .models import Password
 
 # Create your views here.
@@ -24,3 +24,10 @@ class DeletePassword(DeleteView):
     success_url = "/"
 
     
+class PasswordListView(ListView):
+    model = Password
+    template_name = "password_list.html"
+    context_object_name = "passwords"
+
+    def get_queryset(self):
+        return Password.objects.filter(user=self.request.user)
