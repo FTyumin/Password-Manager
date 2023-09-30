@@ -9,8 +9,8 @@ class HomePageView(TemplateView):
 
 class NewPasswordView(CreateView):
     model = Password
-    template_name = "new_password.html"
-    fields = ["title", "username", "body"]
+    template_name = "password_new.html"
+    fields = ["title", "body"]
     success_url = "/"
 
     def form_valid(self, form):
