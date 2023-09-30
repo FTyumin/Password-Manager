@@ -4,7 +4,7 @@ from django.db import models
 
 class Password(models.Model):
     title = models.CharField(max_length=200)
-    body = models.TextField()
+    password = models.TextField()
 
     def __str__(self):
         return self.title
