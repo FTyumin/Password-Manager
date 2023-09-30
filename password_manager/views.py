@@ -7,10 +7,10 @@ from .models import Password
 class HomePageView(TemplateView):
     template_name = "home.html"
 
-class NewPasswordView(CreateView):
+class PasswordCreateView(CreateView):
     model = Password
     template_name = "password_new.html"
-    fields = ["title", "body"]
+    fields = ["title", "password"]
     success_url = "/"
 
     def form_valid(self, form):
@@ -18,7 +18,7 @@ class NewPasswordView(CreateView):
         return super().form_valid(form)
     
 
-class DeletePassword(DeleteView):
+class PasswordDeleteView(DeleteView):
     model = Password
     template_name = "delete_password.html"
     success_url = "/"
@@ -30,4 +30,4 @@ class PasswordListView(ListView):
     context_object_name = "passwords"
 
     def get_queryset(self):
-        return Password.objects.filter(user=self.request.user)
+        return Password.objects.filter()

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-{% for post in post_list %}
+{% for password in password_list %}
 <div class="post-entry">
-<h2><a href="">{{ post.title }}</a></h2>
-<p>{{ post.body }}</p>
+<h2><a href="">{{ password.title }}</a></h2>
+<p>{{ password.body }}</p>
 </div>
 {% endfor %}
 {% endblock content %}
