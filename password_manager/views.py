@@ -35,6 +35,6 @@ class PasswordListView(ListView):
     template_name = "password_list.html"
     context_object_name = "passwords"
 
-    def password_list_view(request):
+    def password_list_view(self,request,*args,**kwargs):
         password_list = Password.objects.all()
-        return render(request, 'password_list.html', {'password_list': password_list})
+        return render(request, self.template_name, {'passwords': password_list})
