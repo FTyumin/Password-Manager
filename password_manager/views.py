@@ -35,7 +35,7 @@ class PasswordUpdateView(UpdateView):
 
 class PasswordDeleteView(DeleteView):
     model = Password
-    template_name = "delete_password.html"
+    template_name = "password_delete.html"
     success_url = "/"
 
 
