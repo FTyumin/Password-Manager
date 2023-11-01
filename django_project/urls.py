@@ -22,5 +22,5 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("password_manager.urls")),
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/padlock.png')))
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/padlock.pngt')))
 ]
