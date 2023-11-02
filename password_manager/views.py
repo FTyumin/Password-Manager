@@ -10,9 +10,13 @@ from .models import Password
 
 
 
-class HomePageView(TemplateView):
+class HomePageView(ListView):
     model = Password
     template_name = "home.html"
+    context_object_name = "passwords"
+
+    def get_queryset(self):
+        return Password.objects.all()
 
 
 class PasswordCreateView(CreateView):
