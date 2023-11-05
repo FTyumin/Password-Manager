@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "password_manager.apps.PasswordManagerConfig",
+    "accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
